@@ -11,9 +11,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class WebDriverFactory {
 
-    public static void main(String[] args) {
 
-    }
     // TASK: NEW METHOD CREATION
 // Method name : getDriver
 // Static method
