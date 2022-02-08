@@ -38,11 +38,30 @@ public class T1_getText_getAttributes {
         String expectedForgotPasswordLinkText = "Forgot your password?";
         String actualForgotPasswordLinkText = forgotPasswordLink.getText();
 
-        if(expectedForgotPasswordLinkText.equalsIgnoreCase(actualForgotPasswordLinkText)){
+        if(expectedForgotPasswordLinkText.equals(actualForgotPasswordLinkText)){
+            System.out.println("PASSED !!!");
+        }else{
+            System.out.println("actualForgotPasswordLinkText = " + actualForgotPasswordLinkText);
+            System.out.println("expectedForgotPasswordLinkText = " + expectedForgotPasswordLinkText);
+            System.out.println("FAILED !!!");
+        }
+
+        //  in this  case  test  did  not pass, BC  lower cases  and lower cases.
+        //  we are  not  robot,  ask  your team members
+
+
+        //5- Verify “forgot password” href attribute’s value contains expected:
+        //Expected: forgot_password=yes
+
+        String expectedInHref = "forgot_password=yes";
+        String actualInHref = forgotPasswordLink.getAttribute("href");
+
+        if(actualInHref.contains(expectedInHref)){
             System.out.println("PASSED !!!");
         }else{
             System.out.println("FAILED !!!");
         }
+
 
 
     }
