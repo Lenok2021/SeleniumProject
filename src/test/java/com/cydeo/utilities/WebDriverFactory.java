@@ -3,8 +3,11 @@ package com.cydeo.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class WebDriverFactory {
 
@@ -23,7 +26,7 @@ public class WebDriverFactory {
 
     public static WebDriver getDriver(String browserType) {
 
-        WebDriver driver = null;
+          WebDriver driver = null;
 
         if (browserType.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
@@ -35,8 +38,21 @@ public class WebDriverFactory {
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
 
+        } else if (browserType.equalsIgnoreCase("opera")) {
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+            driver.manage().window().maximize();
+        }else if(browserType.equalsIgnoreCase("safari")){
+            WebDriverManager.safaridriver().setup();
+            driver = new SafariDriver();
+            driver.manage().window().maximize();
+        }else if (browserType.equalsIgnoreCase("edge")){
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+            driver.manage().window().maximize();
+
         }else{
-            System.out.println("Invalid driver");
+           throw  new NullPointerException("Invalid browser");
         }
         return driver;
 

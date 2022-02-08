@@ -17,7 +17,7 @@ public class T1_Locators_Get_Text {
       //  WebDriver driver = new ChromeDriver();
        // driver.manage().window().maximize();
 
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        WebDriver driver = WebDriverFactory.getDriver("ooo");
 
         //2- Go to: https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
