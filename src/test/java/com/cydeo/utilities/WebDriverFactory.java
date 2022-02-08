@@ -8,6 +8,7 @@ public class WebDriverFactory {
 
     public static void main(String[] args) {
 
+    }
         // TASK: NEW METHOD CREATION
 // Method name : getDriver
 // Static method
@@ -17,10 +18,7 @@ public class WebDriverFactory {
 //   - if "firefox" passed --> it will open firefox browser
 // RETURN TYPE: "WebDriver"
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        
+
 
     }
-}
+
