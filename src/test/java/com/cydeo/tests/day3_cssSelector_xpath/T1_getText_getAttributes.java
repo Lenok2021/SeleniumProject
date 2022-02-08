@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class T1_getText_getAttributes {
 
 
-    public static <Srtring> void main(String[] args) {
+    public static  void main(String[] args) {
 
 
         // 1. open  a Chrome browser
