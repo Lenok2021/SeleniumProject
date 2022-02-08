@@ -23,24 +23,32 @@ elements.
 PS2: Pay attention to where to get the text of this button from
 
          */
-       //1- Open a chrome browser
+        //TC #4: NextBaseCRM, locators, getText(), getAttribute() practice
+        //1- Open a Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
+        //2- Go to: https://login1.nextbasecrm.com/?forgot_password=yes
+        driver.get("https://login1.nextbasecrm.com/?forgot_password=yes");
 
-       // 2- Go to: https://login1.nextbasecrm.com/?forgot_password=yes
-       driver.get("https://login1.nextbasecrm.com/?forgot_password=yes ");
+        //3- Verify “Reset password” button text is as expected:
+        //Expected: Reset password
+        //                  tagName[attribute='value']
 
-      //3 3- Verify “Reset password” button text is as expected:
-        // Expected: Reset password
-        WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[class='login-btn']"));
-         String expectedResetPasswordButton = "Reset password";
-         String actualResetPasswordButton = resetPasswordButton.getText();
+        //locating reset password button using class attribute and its value
+        //WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[class='login-btn']"));
 
-         if(actualResetPasswordButton.equals(expectedResetPasswordButton)){
-             System.out.println("PASSED !!!");
-         }else{
-            System.out.println("FAILED !!!");
+        //locating reset password button using VALUE attribute and its value
+        WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[value='Reset password']"));
+
+        String expectedResetPasswordButtonText = "Reset password";
+        String actualResetPasswordButtonText = resetPasswordButton.getText();
+
+        if (actualResetPasswordButtonText.equals(expectedResetPasswordButtonText)){
+            System.out.println("Button text verification PASSED!");
+        }else{
+            System.out.println("Button text verification FAILED!");
+
         }
-
 
 
     }
