@@ -20,7 +20,12 @@ public class T1_Locators_Get_Text {
         WebElement inputUserName = driver.findElement(By.className("login-inp"));
         inputUserName.sendKeys("incorrect" + Keys.ENTER);
 
+        WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
+        inputPassword.sendKeys("incorrect");
 
+        //  click to login botton
+        WebElement loginButton = driver.findElement(By.className("login-btn"));
+        loginButton.click();
 
 
 
