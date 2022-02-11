@@ -67,5 +67,13 @@ XPATH locator if possible
         WebElement retrievePasswordBtn = driver.findElement(By.xpath(" //button[@id = 'form_submit'] "));
         WebElement retrievePasswordBtn1 = driver.findElement(By.xpath(" //button[@class = 'radius']  "));
 
+        //f)  Powered by Cydeo
+        WebElement poweredByCydeoText = driver.findElement(By.xpath(" //div[@style = 'text-align: center;'] "));
+
+
+
+
+
+
     }
 }
