@@ -1,4 +1,4 @@
-package com.cydeo.tests.day1;
+package com.cydeo.tests.day01_navigation;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

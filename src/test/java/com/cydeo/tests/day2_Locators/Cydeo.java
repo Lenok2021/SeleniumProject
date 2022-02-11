@@ -1,13 +1,12 @@
-package com.cydeo.tests.day2;
+package com.cydeo.tests.day2_Locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LinkText {
-
-
+public class Cydeo {
     public static void main(String[] args) {
+
 
         //TC #1: Cydeo practice tool verifications
         //1. Open Chrome browser
@@ -23,9 +22,9 @@ public class LinkText {
         String expectedURL = "cydeo";
         String actualURL = driver.getCurrentUrl();
 
-        if (actualURL.contains(expectedURL)){
+        if (actualURL.contains(expectedURL)) {
             System.out.println("URL verification PASSED!");
-        }else{
+        } else {
             System.out.println("URL verification FAILED!!!");
         }
 
@@ -34,17 +33,13 @@ public class LinkText {
         String expectedTitle = "Practice";
         String actualTitle = driver.getTitle();
 
-        if (actualTitle.equals(expectedTitle)){
+        if (actualTitle.equals(expectedTitle)) {
             System.out.println("Title verification PASSED!");
-        }else{
+        } else {
             System.out.println("Title verification FAILED!!!");
         }
 
         driver.close();
-
-
-
-
 
     }
 }
