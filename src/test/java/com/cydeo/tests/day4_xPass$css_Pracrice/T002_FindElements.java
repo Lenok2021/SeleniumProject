@@ -43,9 +43,14 @@ public class T002_FindElements {
         //4- Print out the number of the links on the page.
         System.out.println("allLinks.size() = " + allLinks.size());
 
-        //4- Print out the number of the links on the page.
+        //5- Print out the number of the links on the page.
+        //6- Print out the HREF attribute values of the links
         for(WebElement each : allLinks){
+
             System.out.println("Text of link: " + each.getText());
+            System.out.println("HREF Values: "+ each.getAttribute("href"));
+
+
         }
 
 
