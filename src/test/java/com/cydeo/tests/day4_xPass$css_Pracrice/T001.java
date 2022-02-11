@@ -65,7 +65,7 @@ XPATH locator if possible
         // e) “Retrieve password” button
 
         WebElement retrievePasswordBtn = driver.findElement(By.xpath(" //button[@id = 'form_submit'] "));
-
+        WebElement retrievePasswordBtn1 = driver.findElement(By.xpath(" //button[@class = 'radius']  "));
 
     }
 }
