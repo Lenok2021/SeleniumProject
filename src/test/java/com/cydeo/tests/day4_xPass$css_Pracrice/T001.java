@@ -45,5 +45,17 @@ XPATH locator if possible
         WebElement homeLink1 = driver.findElement(By.cssSelector(" a.nav-link "));
         WebElement homeLink2 = driver.findElement(By.cssSelector(" a[href='/'] "));
 
+        // b) “Forgot password” header
+        // locate by css: locate parent element move to h2
+        WebElement forgotPassword = driver.findElement(By.cssSelector("div.example>h2 "));
+
+        // locate by x-Path
+        // we located by using text
+        WebElement forgotPassword1 = driver.findElement(By.cssSelector(" //h2[text()='Forgot Password'] "));
+        WebElement forgotPassword2 = driver.findElement(By.cssSelector( " //h2[.='Forgot Password'] "));
+
+        // c)  “E-mail” text
+
+
     }
 }
