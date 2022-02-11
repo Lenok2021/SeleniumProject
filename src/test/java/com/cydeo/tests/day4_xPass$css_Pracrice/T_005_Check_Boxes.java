@@ -35,7 +35,11 @@ public class T_005_Check_Boxes {
         Thread.sleep(3000);
         checkbox2.click();
         //6. Confirm checkbox #1 is SELECTED.
+        System.out.println("checkbox1.isSelected() = " + checkbox1.isSelected());
+
         //7. Confirm checkbox #2 is NOT selected.
+
+        System.out.println("checkbox2.isSelected() = " + checkbox2.isSelected());
 
     }
 
