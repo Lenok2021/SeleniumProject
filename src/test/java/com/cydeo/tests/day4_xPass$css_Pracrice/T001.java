@@ -62,6 +62,9 @@ XPATH locator if possible
         WebElement inputBox = driver.findElement(By.xpath(" input[@name= 'email'] "));
         WebElement inputBox1 = driver.findElement(By.xpath(" //input[contains(@pattern,'a-z') "));
 
+        //
+
+
 
     }
 }
