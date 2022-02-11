@@ -38,6 +38,7 @@ XPATH locator if possible
 
       //  3. Locate all the WebElements on the page using XPATH and/or CSS
      //   locator only (total of 6)
+        // a. “Home” link
 
 
     }
