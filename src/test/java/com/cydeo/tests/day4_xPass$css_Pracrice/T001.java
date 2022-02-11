@@ -69,7 +69,7 @@ XPATH locator if possible
 
         //f)  Powered by Cydeo
         WebElement poweredByCydeoText = driver.findElement(By.xpath(" //div[@style = 'text-align: center;'] "));
-
+        WebElement cydeoText = driver.findElement(By.xpath(" //a[. = 'CYDEO'] "));
 
 
 
