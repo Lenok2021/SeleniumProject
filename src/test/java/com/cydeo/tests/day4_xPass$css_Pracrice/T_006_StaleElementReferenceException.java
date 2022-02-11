@@ -38,8 +38,7 @@ public class T_006_StaleElementReferenceException {
         // web element  after when we refreshed the page.
         // BC  when you  refreshed your page we lost connection
 
-
-
+        driver.close();
 
 
     }
