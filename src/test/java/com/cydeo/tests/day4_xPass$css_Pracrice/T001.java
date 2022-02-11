@@ -35,11 +35,11 @@ XPATH locator if possible
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-       // 2. Go to https://practice.cydeo.com/forgot_password
+        // 2. Go to https://practice.cydeo.com/forgot_password
         driver.get("https://practice.cydeo.com/forgot_password ");
 
-      //  3. Locate all the WebElements on the page using XPATH and/or CSS
-     //   locator only (total of 6)
+        //  3. Locate all the WebElements on the page using XPATH and/or CSS
+        //   locator only (total of 6)
         // a) “Home” link
         WebElement homeLink = driver.findElement(By.cssSelector(" a[class='nav-link'] "));
         WebElement homeLink1 = driver.findElement(By.cssSelector(" a.nav-link "));
@@ -52,7 +52,7 @@ XPATH locator if possible
         // locate by x-Path
         // we located by using text
         WebElement forgotPassword1 = driver.findElement(By.xpath(" //h2[text()='Forgot Password'] "));
-        WebElement forgotPassword2 = driver.findElement(By.xpath( " //h2[.='Forgot Password'] "));
+        WebElement forgotPassword2 = driver.findElement(By.xpath(" //h2[.='Forgot Password'] "));
 
         // c)  “E-mail” text
         WebElement emailLabel = driver.findElement(By.xpath(" //label[@for = 'email'] "));
@@ -62,8 +62,9 @@ XPATH locator if possible
         WebElement inputBox = driver.findElement(By.xpath(" input[@name= 'email'] "));
         WebElement inputBox1 = driver.findElement(By.xpath(" //input[contains(@pattern,'a-z') "));
 
-        //
+        // e) “Retrieve password” button
 
+        WebElement retrievePasswordBtn = driver.findElement(By.xpath(" //button[@id = 'form_submit'] "));
 
 
     }
