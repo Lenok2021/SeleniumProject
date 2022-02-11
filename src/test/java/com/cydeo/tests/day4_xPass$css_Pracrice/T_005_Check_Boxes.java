@@ -32,6 +32,8 @@ public class T_005_Check_Boxes {
          checkbox1.click();
 
          //5. Click checkbox #2 to deselect it.
+        Thread.sleep(3000);
+        checkbox2.click();
         //6. Confirm checkbox #1 is SELECTED.
         //7. Confirm checkbox #2 is NOT selected.
 
