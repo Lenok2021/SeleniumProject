@@ -51,10 +51,16 @@ XPATH locator if possible
 
         // locate by x-Path
         // we located by using text
-        WebElement forgotPassword1 = driver.findElement(By.cssSelector(" //h2[text()='Forgot Password'] "));
-        WebElement forgotPassword2 = driver.findElement(By.cssSelector( " //h2[.='Forgot Password'] "));
+        WebElement forgotPassword1 = driver.findElement(By.xpath(" //h2[text()='Forgot Password'] "));
+        WebElement forgotPassword2 = driver.findElement(By.xpath( " //h2[.='Forgot Password'] "));
 
         // c)  “E-mail” text
+        WebElement emailLabel = driver.findElement(By.xpath(" //label[@for = 'email'] "));
+        WebElement emailLabel1 = driver.findElement(By.xpath(" //label[ .= 'E-mail']  "));
+
+        // d)  input box      //input[@name= 'email']
+        WebElement inputBox = driver.findElement(By.xpath(" input[@name= 'email'] "));
+        WebElement inputBox1 = driver.findElement(By.xpath(" //input[contains(@pattern,'a-z') "));
 
 
     }
