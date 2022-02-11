@@ -1,7 +1,9 @@
 package com.cydeo.tests.day4_xPass$css_Pracrice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T001 {
@@ -38,8 +40,10 @@ XPATH locator if possible
 
       //  3. Locate all the WebElements on the page using XPATH and/or CSS
      //   locator only (total of 6)
-        // a. “Home” link
-
+        // a) “Home” link
+        WebElement homeLink = driver.findElement(By.cssSelector(" a[class='nav-link'] "));
+        WebElement homeLink1 = driver.findElement(By.cssSelector(" a.nav-link "));
+        WebElement homeLink2 = driver.findElement(By.cssSelector(" a[href='/'] "));
 
     }
 }
