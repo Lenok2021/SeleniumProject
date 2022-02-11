@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class T_005_Check_Boxes {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //Practice: Checkboxes
         //1. Go to http://practice.cydeo.com/checkboxes
         WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -20,14 +20,18 @@ public class T_005_Check_Boxes {
         WebElement checkbox1 = driver.findElement(By.xpath(" //input[@name = 'checkbox1']  "));
         WebElement checkbox2 = driver.findElement(By.xpath(" //input[@name = 'checkbox2'] "));
 
+
+        //2. Confirm checkbox #1 is NOT selected by default
+
         System.out.println("checkbox1.isEnabled() = " + checkbox1.isSelected());
+        //3. Confirm checkbox #2 is SELECTED by default.
         System.out.println("checkbox2.isSelected() = " + checkbox2.isSelected());
 
-        //2. Confirm checkbox #1 is NOT selected by default 3. Confirm checkbox #2 is SELECTED by default.
-
-
         //4. Click checkbox #1 to select it.
-        //5. Click checkbox #2 to deselect it.
+         Thread.sleep(3000);
+         checkbox1.click();
+
+         //5. Click checkbox #2 to deselect it.
         //6. Confirm checkbox #1 is SELECTED.
         //7. Confirm checkbox #2 is NOT selected.
 
