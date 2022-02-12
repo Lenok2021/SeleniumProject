@@ -14,7 +14,7 @@ public class TC06 {
 
         // TC:6 As a user I should be able to see the password as "*******"
 
-        //1-open a chrome browser
+        //1-open a Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -40,6 +40,6 @@ public class TC06 {
         }else{
             System.err.println("FAILED");
         }
-        driver.close();
+        //driver.close();
     }
 }
