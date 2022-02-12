@@ -34,6 +34,9 @@ TC:4 As a user I should be able to see Login is displayed
            System.err.println(" FAILED !!!");
        }
 
+       driver.close();
+
+
     }
 
 }
