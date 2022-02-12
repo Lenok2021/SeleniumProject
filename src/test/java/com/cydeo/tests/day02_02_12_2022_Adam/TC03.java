@@ -28,3 +28,10 @@ public class TC03 {
 driver.close();
     }
 }
+
+/*
+what the difference between
+/ from parent to direct child
+// from parent to any child
+
+ */
