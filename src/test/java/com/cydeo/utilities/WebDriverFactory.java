@@ -21,6 +21,10 @@ public class WebDriverFactory {
 //   - if "firefox" passed --> it will open firefox browser
 // RETURN TYPE: "WebDriver"
 
+    //  @ param browserType.
+    //  @ return WebDriver.
+    //  in real work env.  you can add it
+    // and everyone will be to understand your code.
 
     public static WebDriver getDriver(String browserType) {
 
