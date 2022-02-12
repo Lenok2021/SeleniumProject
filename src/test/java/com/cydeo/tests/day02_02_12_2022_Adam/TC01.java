@@ -49,8 +49,8 @@ public class TC01 {
         // why  we put  li[1]  BC  when you change from 1 to 6
         // you can find each element from ul
         // if you delete 1 in li  you can find all elements
+        // css selector ul[id='top-menu'] >li >a
 
-
-
+driver.close();
     }
 }
