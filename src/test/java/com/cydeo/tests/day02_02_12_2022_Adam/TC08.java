@@ -42,7 +42,7 @@ public class TC08 {
         }else {
             System.out.println("Password is not shown and FAILED");
         }
-        driver.close();
+       // driver.close();
 
 
     }
