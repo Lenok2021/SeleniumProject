@@ -37,8 +37,16 @@ public class TestNg {
 
     }
 
+
+
     @Test
     public void test2(){
         System.out.println("Test 2 is running...");
+
+        String actual = "apple";
+        String expected = "apple";
+
+        Assert.assertTrue(actual.equals(expected));
+
     }
 }
