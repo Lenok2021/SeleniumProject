@@ -16,7 +16,6 @@ public class RatioButton {
 
             if (eachId.equals(idValue)) {
                 each.click();
-
                 System.out.println(eachId + " is selected" + each.isSelected());
                 break;
 
