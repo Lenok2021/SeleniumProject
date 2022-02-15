@@ -27,11 +27,35 @@ public class RatioButtons {
         System.out.println("hockeyButton.isEnabled() = " + hockeyButton.isEnabled());
 
         System.out.println("=========================================================");
-        //  locate green button
+
+        //  locate blue button
+        WebElement blueButton = driver.findElement(By.xpath(" //div[@class = 'radio']/input[@id = 'blue']"));
+        System.out.println("blueButton.isSelected() = " + blueButton.isSelected());
+        System.out.println("blueButton.isDisplayed() = " + blueButton.isDisplayed());
+        System.out.println("blueButton.isEnabled() = " + blueButton.isEnabled());
+
+        System.out.println("===========================================================");
+        //locate green button
+
+        WebElement greenButton = driver.findElement(By.xpath(" //input[@id = 'green']"));
+        System.out.println("greenButton.isEnabled() = " + greenButton.isEnabled());
+        System.out.println("greenButton.isDisplayed() = " + greenButton.isDisplayed());
+        System.out.println("greenButton.isSelected() = " + greenButton.isSelected());
+
+        // verify  is  label is == green
+
+        WebElement label = driver.findElement(By.xpath(" //div[@class = 'radio']//label[.='Green']"));
+        String actualLabel = label.getText();
+        String expectedLabel = "Green";
+        if(actualLabel.equalsIgnoreCase(expectedLabel)){
+            System.out.println("PASSED !!!");
+        }else{
+            System.out.println("FAILED !!!");
+        }
 
 
 
-        driver.close();
+        // driver.close();
 
 
 
