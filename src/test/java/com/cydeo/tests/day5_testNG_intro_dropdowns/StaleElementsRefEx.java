@@ -49,7 +49,7 @@ public class StaleElementsRefEx {
             System.out.println("--> The webElement is not displayed.");
         }
 
-
+       driver.close();
 
     }
 }
