@@ -1,7 +1,6 @@
-package com.cydeo.tests.day02_02_12_2022_Adam;
+package com.cydeo.tests.officeHours02_12_2022_Adam;
 
 import com.cydeo.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
