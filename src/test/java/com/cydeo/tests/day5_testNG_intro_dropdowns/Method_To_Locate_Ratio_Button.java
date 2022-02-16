@@ -13,9 +13,9 @@ public class Method_To_Locate_Ratio_Button {
     public static void main(String[] args) {
         //1. Open Chrome browser
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();  // implementation  from Object!!!
         driver.manage().window().maximize();
-
+        //   
         //2. Go to https://practice.cydeo.com/radio_buttons
         driver.get("https://practice.cydeo.com/radio_buttons");
 
