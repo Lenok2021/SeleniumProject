@@ -55,7 +55,7 @@ public class RatioButtons {
 
 
 
-        // driver.close();
+         driver.close();
 
 
 
