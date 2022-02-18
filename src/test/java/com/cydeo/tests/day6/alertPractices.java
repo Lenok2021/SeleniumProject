@@ -1,6 +1,7 @@
 package com.cydeo.tests.day6;
 
 import com.cydeo.utilities.WebDriverFactory;
+import com.google.common.base.Verify;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,7 +48,7 @@ public class alertPractices {
         // verify  is the  Text  is  matching with "The text is not matching".
         String actualText = resultText.getText();
         String expectedText = "You successfully clicked an alert";
-        Assert.assertEquals(actualText,expectedText,"The text is not matching");
+        Assert.assertEquals(actualText, expectedText, "The text is not matching");
 
       /*
         TC #1: Information alert practice
@@ -63,7 +64,28 @@ public class alertPractices {
     @Test
     public void alert_test2() {
 
-// //button[@onclick = 'jsConfirm()']
+        // Click to “Click for JS Confirm” button
+        WebElement informationAlertButton = driver.findElement(By.xpath("//button[@onclick = 'jsConfirm()']"));
+
+        // Click to “Click for JS Confirm” button
+        informationAlertButton.click();
+
+        // Click to OK button from the alert
+        // to be able to  click on Alert OK button  we need to switch driver's focus to Alert itself.
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+        // Verify “You clicked: Ok” text is displayed.
+        WebElement resultText = driver.findElement(By.xpath(" //p[@id = 'result']"));
+        Assert.assertTrue(resultText.isDisplayed());
+
+        // Verify is text “You clicked: Ok”
+        String actualText = resultText.getText();
+        String expectedText = "You clicked: Ok";
+        Assert.assertEquals(actualText,expectedText,"The text is not matching");
+
+
+
         /*
         TC #2: Confirmation alert practice
 1. Open browser
