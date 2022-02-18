@@ -28,10 +28,10 @@ public class TestNg_Selenium {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @AfterMethod
-    public void tearDownMethod(){
-        driver.close();
-    }
+
+
+
+
 
     @Test
     public void selenium_test(){
@@ -44,7 +44,7 @@ public class TestNg_Selenium {
         String actualTitle = driver.getTitle();
         String expectedTitle = "Google";
 
-        Assert.assertEquals(actualTitle,expectedTitle, "Title is not matching here." );
+        Assert.assertEquals(actualTitle,expectedTitle, "Title is  matching here." );
 
     }
 }
