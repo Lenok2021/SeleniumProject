@@ -30,7 +30,9 @@ public class TestNg_Selenium {
 
 
 
-
+  @AfterMethod public void closeBrowser(){
+        driver.close();
+  }
 
 
     @Test
