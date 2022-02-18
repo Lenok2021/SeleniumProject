@@ -1,33 +1,36 @@
 package com.cydeo.tests.day6;
 
 import com.cydeo.utilities.WebDriverFactory;
-import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class dropDowns {
+public class dropDowns_California_Month_Two_Tests {
 
+    WebDriver driver;
 
-    @Test
-    public void dropdown_task5() throws InterruptedException {
-        //TC #5: Selecting state from State dropdown and verifying result 1. Open Chrome browser
-        //2. Go to https://practice.cydeo.com/dropdown
+    @BeforeMethod
+    public void start(){
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://practice.cydeo.com/dropdown");
 
+    }
+
+
+    @Test
+    public void dropdown_task5() throws InterruptedException {
+
         //we located the dropdown and it is ready to use
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
-
         //  IMPORTANT  we  do not  need  to put Thread.sleep  method
         // NEVER
-
 
         //3. Select Illinois
         Thread.sleep(1000);
@@ -47,8 +50,6 @@ public class dropDowns {
         Assert.assertEquals(expectedOptionText, actualOptionText, "PASSED !!!");
 
 
-
-        //Use all Select options. (visible text, value, index)
     }
 
 
