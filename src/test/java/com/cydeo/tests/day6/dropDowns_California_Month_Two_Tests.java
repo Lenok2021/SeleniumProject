@@ -15,7 +15,7 @@ public class dropDowns_California_Month_Two_Tests {
     WebDriver driver;
 
     @BeforeMethod
-    public void start(){
+    public void start() {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -30,8 +30,7 @@ public class dropDowns_California_Month_Two_Tests {
         //we located the dropdown and it is ready to use
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
         //  IMPORTANT  we  do not  need  to put Thread.sleep  method
-        // NEVER
-
+        // NEVER  !!!!!
         //3. Select Illinois
         Thread.sleep(1000);
         stateDropdown.selectByVisibleText("Illinois");
@@ -48,18 +47,8 @@ public class dropDowns_California_Month_Two_Tests {
         String expectedOptionText = "California";
         String actualOptionText = stateDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals(expectedOptionText, actualOptionText, "PASSED !!!");
-
-
-    }
-
-
-}
-
-
-
-
-
-/*
+      /*
+        /*
 TC #5: Selecting state from State dropdown and verifying result
 1. Open Chrome browser
 2. Go to https://practice.cybertekschool.com/dropdown
@@ -69,3 +58,44 @@ TC #5: Selecting state from State dropdown and verifying result
 6. Verify final selected option is California.
 Use all Select options. (visible text, value, index)
  */
+
+
+    }
+
+    @Test
+    public void dropdown_task6() {
+
+        Select yearDropDown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropDown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
+        Select dayDropDown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
+
+        // Select “December 1st, 1923” and verify it is selected.
+        yearDropDown.selectByVisibleText("1923");
+        monthDropDown.selectByValue("11");
+        dayDropDown.selectByIndex(1);
+
+
+
+
+
+      /*
+        TC #6: Selecting date on dropdown and verifying
+1. Open Chrome browser
+2. Go to https://practice.cydeo.com/dropdown
+3. Select “December 1st, 1923” and verify it is selected.
+Select year using  : visible text
+Select month using   : value attribute
+Select day using : index number
+       */
+
+
+
+
+    }
+
+}
+
+
+
+
+
