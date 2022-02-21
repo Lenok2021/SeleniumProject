@@ -1,7 +1,6 @@
-package com.cydeo.tests.day6;
+package com.cydeo.tests.day6_Alerts_iFrame_HandleWindow;
 
 import com.cydeo.utilities.WebDriverFactory;
-import com.google.common.base.Verify;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.cydeo.tests.day6;
+package com.cydeo.tests.day6_Alerts_iFrame_HandleWindow;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;

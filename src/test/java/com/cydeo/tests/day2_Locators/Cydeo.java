@@ -38,7 +38,6 @@ public class Cydeo {
         } else {
             System.out.println("Title verification FAILED!!!");
         }
-
         driver.close();
 
     }
