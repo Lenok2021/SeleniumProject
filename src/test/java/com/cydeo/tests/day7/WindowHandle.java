@@ -34,6 +34,8 @@ public class WindowHandle {
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
 
         //4. Create a logic to switch to the tab where Etsy.com is open
+        // we created For Loop  in order to switch from one Window to another
+
         Set<String> allWindowHandles = driver.getWindowHandles();
 
         for (String each : allWindowHandles) {
@@ -44,6 +46,7 @@ public class WindowHandle {
                 break;
             }
         }
+
         //5. Assert:Title contains “Etsy”
 
         String actualTitle = driver.getTitle();
