@@ -55,17 +55,21 @@ Method info:
 • Name: switchWindowAndVerify
 • Return type: void
 • Arg1: WebDriver
-• Arg2: String expectedInUrl
+• Arg2: String expectedInUrl: to verify if the URL contains given String
+-If condition matches, will break Loop
 • Arg3: String expectedTitle
+-Tobe able to be compared against actualTitle
 
 
+      */
 
+            }
+    /*
+    This method accepts String "expectedTitle' and accepts if it is true
+     */
+    public static void verifyTitle(WebDriver driver, String expectedTitle){
 
-
-       */
-
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
 
     }
-
-
 }
