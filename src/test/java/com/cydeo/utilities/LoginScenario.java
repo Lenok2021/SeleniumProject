@@ -16,7 +16,7 @@ public class LoginScenario {
     public WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -25,7 +25,7 @@ public class LoginScenario {
 
     //TC #3: Login scenario
     @Test
-    public void crm_login_test(){
+    public void crm_login_test1() {
 
         //2. Go to : https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
@@ -47,6 +47,18 @@ public class LoginScenario {
 
         //6. Verify title is as expected:
         //Expected: Portal
+        BrowserUtils.verifyTitle(driver, "Portal");
+
+    }
+
+    @Test
+    public void login_test2() {
+
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //calling utility method from CRM  utility
+        CRM_Utilities.crm_login(driver);
+
         BrowserUtils.verifyTitle(driver, "Portal");
 
     }
