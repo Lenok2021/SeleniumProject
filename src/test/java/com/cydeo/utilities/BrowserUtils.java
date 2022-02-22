@@ -38,10 +38,10 @@ for given duration
                 break;
             }
         }
-
         String actualTitle = driver.getTitle();
 
         Assert.assertTrue(actualTitle.contains(expectedTitle));
+
 
 
       /*
