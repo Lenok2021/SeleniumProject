@@ -46,7 +46,22 @@ expectedOrderDate matching actualOrderDate.
     public static String returnOrderDate2(WebDriver driver, String customerName){
         return driver.findElement(By.xpath("//td[.='"+customerName+"']/following-sibling::td[3]")).getText();}
 
+
+
+    public static void orderVerify (WebDriver driver,String customerName,String expectedOrderDate ){
+        String locator = "//td[.='"+customerName+"']/following-sibling::td[3]";
+        WebElement customerDateCell = driver.findElement(By.xpath(locator));
+
+        String actualOrderDate = customerDateCell.getText();
+        Assert.assertEquals(actualOrderDate,expectedOrderDate);
+
+
     }
+    }
+
+
+
+
 
 
 
