@@ -22,7 +22,7 @@ public class WebTableOrderVerify {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.get("https://practice.cydeo.com/web-tables");
     }
 
     @Test
@@ -53,10 +53,19 @@ public class WebTableOrderVerify {
 
     //We use the utility method we created.
     @Test
-    public void test2() {
+    public void test1() {
         driver.get("https://practice.cydeo.com/web-tables");
-        String costumerOrderDate1 = WebTableUtility.returnOrderDate(driver, "Alexandra Gray");
-        System.out.println("costumerOrderDate1 = " + costumerOrderDate1);
+        String costumerOrderDate = WebTableUtility.returnOrderDate(driver, "Alexandra Gray");
+        System.out.println("costumerOrderDate = " + costumerOrderDate);
+
+    }
+
+    //  We  use  method OrderVerifyMethod
+    @Test
+    public void test2() {
+
+        WebTableUtility.orderVerify(driver, "Bart Fisher", "01/16/2021");
+
 
     }
 }

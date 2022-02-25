@@ -53,8 +53,8 @@ expectedOrderDate matching actualOrderDate.
         WebElement customerDateCell = driver.findElement(By.xpath(locator));
 
         String actualOrderDate = customerDateCell.getText();
-        Assert.assertEquals(actualOrderDate,expectedOrderDate);
 
+        Assert.assertEquals(actualOrderDate, expectedOrderDate);
 
     }
     }
