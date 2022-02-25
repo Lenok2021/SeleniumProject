@@ -28,5 +28,16 @@ public class ReadingProperties {
        // System.out.println(properties.getProperty("evrt")) - I give wrong key
 //output = null   !!!!!!!!
 
+        // everything that outside of Java folder is not a Java code:
+                                    //  pom.xml
+                                    // configuration.properties
+                                    // .gitignore file
+        //VERY IMPORTANT!!!  don't put any spaces after, before keys in properties
+        // you can get problem. Pay attentions!!!!
+
+
+
+
+
     }
 }
