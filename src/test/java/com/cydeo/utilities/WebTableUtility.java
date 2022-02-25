@@ -6,13 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class WebTableUtility {
+/*
+TC #2: Web table practice Task1 cont.
+ 1. Create a new class called WebTableUtils.
+2. Create two methods to verify order
+    */
 
-    public static String returnOrderDate(WebDriver driver, String costumerName) {
-
-        String locator = "//td[. = '" + costumerName + "']/following-sibling::td[3]))";
-        WebElement customerDateCell = driver.findElement(By.xpath(locator));
-        String returnOrderDate = customerDateCell.getText();
-        return returnOrderDate;
 /*
 Method #1 info:
 • Name: returnOrderDate ()
@@ -23,29 +22,8 @@ This method should accept a costumerName and return the costumer order date
 as a String.
 
  */
-
-
-    }
-
-    public static void orderVerify (WebDriver driver,String costumerName,  String expectedOrderDate ){
-
-
-
-
-    }
-
-}
-
-
-/*
-TC #2: Web table practice Task1 cont.
- 1. Create a new class called WebTableUtils.
-2. Create two methods to verify order
-
-
-
-
-Method #2 info:
+ /*
+    Method #2 info:
 • Name: orderVerify ()
 • Return type: void
 • Arg1: WebDriver driver
@@ -56,3 +34,24 @@ expectedOrderDate matching actualOrderDate.
 
 
  */
+
+    public static String returnOrderDate(WebDriver driver, String customerName){
+        String locator = "//td[.='"+customerName+"']/following-sibling::td[3]";
+        WebElement customerDateCell = driver.findElement(By.xpath(locator));
+        return customerDateCell.getText();
+    }
+
+
+
+    public static String returnOrderDate2(WebDriver driver, String customerName){
+        return driver.findElement(By.xpath("//td[.='"+customerName+"']/following-sibling::td[3]")).getText();}
+
+    }
+
+
+
+
+
+
+
+

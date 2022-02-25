@@ -1,5 +1,6 @@
 package com.cydeo.tests.day8;
 
+import com.cydeo.utilities.WebTableUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -48,9 +49,14 @@ public class WebTableOrderVerify {
         Assert.assertEquals(actualOrderCell, expectedOrderCell);
 
 
-
-
     }
 
+    //We use the utility method we created.
+    @Test
+    public void test2() {
+        driver.get("https://practice.cydeo.com/web-tables");
+        String costumerOrderDate1 = WebTableUtility.returnOrderDate(driver, "Alexandra Gray");
+        System.out.println("costumerOrderDate1 = " + costumerOrderDate1);
 
+    }
 }
