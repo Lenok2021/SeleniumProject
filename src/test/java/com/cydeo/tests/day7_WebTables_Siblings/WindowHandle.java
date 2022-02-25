@@ -1,7 +1,6 @@
-package com.cydeo.tests.day7;
+package com.cydeo.tests.day7_WebTables_Siblings;
 
 import com.cydeo.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

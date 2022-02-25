@@ -1,4 +1,4 @@
-package com.cydeo.tests.day8;
+package com.cydeo.tests.day8_Properties;
 
 import org.testng.annotations.Test;
 
