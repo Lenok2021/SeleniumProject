@@ -1,5 +1,7 @@
 package com.cydeo.tests.day8_Properties;
 
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,16 +19,20 @@ WebDriver driver;
     @BeforeMethod
     public void setUp() {
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        //String browserType = ConfigurationReader.getProperty("browser");
+
+        driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://google.com");
+
 
     }
 
     @Test
     public void google_search_test() {
+        driver.get("https://google.com");
+
 
         WebElement  googleSearch = driver.findElement(By.xpath("//input[@name = 'q']"));
 
@@ -46,7 +52,7 @@ WebDriver driver;
 /*
 
 TC #4: Google search
-1- Open a chrome browser
+1- Open a Chrome browser
 2- Go to: https://google.com
 3- Write “apple” in search box
 4- Verify title:
