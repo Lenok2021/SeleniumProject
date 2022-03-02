@@ -3,11 +3,14 @@ package com.cydeo.homework;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.WebDriverFactory;
 import com.github.javafaker.Faker;
+import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -24,14 +27,14 @@ public class SmartBear {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
 
     }
 
     @Test
     public void smartbearSoftwareLinkVerification() {
 
-        driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
+
         WebElement userName = driver.findElement(By.id("ctl00_MainContent_username"));
         userName.sendKeys("Tester");
 
@@ -82,7 +85,7 @@ public class SmartBear {
         String street = faker.address().streetAddress();
         String city = faker.address().cityName();
         String state = faker.address().stateAbbr();
-        String zipCode = faker.address().zipCode();
+        String zipCode = faker.address().zipCode().replace("-","");
 
         WebElement customerNameButton = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
         customerNameButton.sendKeys(customerName);
@@ -103,7 +106,7 @@ public class SmartBear {
         //Generate card number using JavaFaker
         WebElement visa = driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
         visa.click();
-        String cardNumber = faker.business().creditCardNumber();
+        String cardNumber = faker.business().creditCardNumber().replace("-","");
 
         WebElement enterNumber = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
         enterNumber.sendKeys(cardNumber);
@@ -115,9 +118,12 @@ public class SmartBear {
         WebElement processButton = driver.findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
         processButton.click();
 
-    }
-}
+        WebElement title = driver.findElement(By.tagName("strong"));
 
+        String actualTResult = title.getText();
+        String excpectedResult = "New order has been successfully added.";
+
+        Assert.assertEquals(actualTResult,excpectedResult);
 
 /*
 TC #1: Smartbear software link verification
@@ -154,3 +160,57 @@ http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx
 
 
  */
+
+
+
+
+
+    }
+
+
+    @Test
+    public void verifyOrder() {
+
+        SmartBearUtils.SmartBearLogin(driver);
+
+        // click on view all orders Link
+        WebElement ordersLink = driver.findElement(By.linkText("View all orders"));
+        ordersLink.click();
+
+       // Verify Susan McLaren has order on date “01/05/2010”
+
+
+        WebElement customerName = driver.findElement(By.xpath("//div//tbody/tr[6]/td[2]"));
+        WebElement orderDate = driver.findElement(By.xpath("//div//tbody/tr[6]/td[2]/following-sibling :: td[3]"));
+
+        String actualName = customerName.getText();
+        String expectedName = "Susan McLaren";
+        Assert.assertEquals(actualName,expectedName);
+
+
+        String actualOrderDate = orderDate.getText();
+        String expectedOrderDate = "01/05/2010";
+        Assert.assertEquals(actualOrderDate,expectedOrderDate);
+
+
+
+  /*
+TC#3: Smartbear software order verification
+1. Open browser and login to Smartbear software
+2. Click on View all orders
+3. Verify Susan McLaren has order on date “01/05/2010”
+
+
+   */
+
+
+    }
+
+
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+    }
+}
+
+
