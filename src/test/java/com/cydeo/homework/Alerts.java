@@ -1,6 +1,5 @@
-package com.cydeo.practice;
+package com.cydeo.homework;
 
-import com.google.common.base.Verify;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
