@@ -1,22 +1,18 @@
 package com.cydeo.tests.OfficeHours;
 
-import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.CRM_Utilities;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class US5 {
+public class US5MessageWithBody {
 
     WebDriver driver;
 
@@ -57,15 +53,16 @@ public class US5 {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
 
-        driver.quit();
+
+
     }
 
-}
 
-}
+
+
+
+
 
 /*
 //Test cases #1
