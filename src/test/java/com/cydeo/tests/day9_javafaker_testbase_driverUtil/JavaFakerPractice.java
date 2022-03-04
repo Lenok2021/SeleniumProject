@@ -22,5 +22,6 @@ public class JavaFakerPractice {
         System.out.println(faker.name().lastName());
         System.out.println(faker.name().fullName());
 
+
     }
 }
