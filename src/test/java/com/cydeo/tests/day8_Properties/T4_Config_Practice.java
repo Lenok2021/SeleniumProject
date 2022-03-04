@@ -38,7 +38,6 @@ WebDriver driver;
 
         googleSearch.sendKeys("apple" + Keys.ENTER);
 
-
         String expectedTitle = "apple - Google Search";
         String actualTitle = driver.getTitle();
 
