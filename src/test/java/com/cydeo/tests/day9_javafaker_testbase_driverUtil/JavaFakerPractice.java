@@ -46,5 +46,8 @@ public class JavaFakerPractice {
                 + faker.letterify("??AA??BB"));
 
 
+
+
+
     }
 }
