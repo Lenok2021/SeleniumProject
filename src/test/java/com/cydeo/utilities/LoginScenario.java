@@ -1,5 +1,6 @@
 package com.cydeo.utilities;
 
+import com.cydeo.tests.base.TestBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,17 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginScenario {
-
-    public WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
+public class LoginScenario  extends TestBase {
 
     //TC #3: Login scenario
     @Test
