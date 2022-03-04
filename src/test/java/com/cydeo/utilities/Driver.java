@@ -35,7 +35,6 @@ public class Driver {
             file switch statement  will determine the
              */
 
-
             switch (browserType) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
