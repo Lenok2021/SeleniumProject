@@ -1,6 +1,7 @@
 package com.cydeo.tests.day8_Properties;
 
 import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import com.cydeo.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -15,34 +16,35 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class T4_Config_Practice {
-WebDriver driver;
-    @BeforeMethod
-    public void setUp() {
+    /*
+    WebDriver driver;
+        @BeforeMethod
+        public void setUp() {
 
 
-        //String browserType = ConfigurationReader.getProperty("browser");
+            //String browserType = ConfigurationReader.getProperty("browser");
 
-        driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
-    }
-
+        }
+    */
     @Test
     public void google_search_test() {
-        driver.get("https://google.com");
 
+        // Driver.getDriver() ==>>>  return Driver
+        Driver.getDriver().get("https://google.com");
 
-        WebElement  googleSearch = driver.findElement(By.xpath("//input[@name = 'q']"));
+        WebElement googleSearch = Driver.getDriver().findElement(By.xpath("//input[@name = 'q']"));
 
         googleSearch.sendKeys("apple" + Keys.ENTER);
 
         String expectedTitle = "apple - Google Search";
-        String actualTitle = driver.getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
-
 
 
     }
