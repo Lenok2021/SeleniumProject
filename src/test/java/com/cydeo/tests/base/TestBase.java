@@ -1,6 +1,8 @@
 package com.cydeo.tests.base;
 
+import com.cydeo.utilities.Driver;
 import com.cydeo.utilities.WebDriverFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +15,9 @@ public abstract class TestBase {  //  that's not a mandatory to make it abstract
 
     @BeforeMethod
     public void setupMethod(){
-        driver = WebDriverFactory.getDriver("chrome");
+        WebDriverManager.chromedriver().setup();
+        Driver.getDriver();
+       // driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
