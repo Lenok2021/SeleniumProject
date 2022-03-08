@@ -1,4 +1,4 @@
-package com.cydeo.tests.day10;
+package com.cydeo.tests.day10_Action_Class;
 
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
