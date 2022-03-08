@@ -30,6 +30,10 @@ public class Driver {
              from configuration properties file
              */
             String browserType = ConfigurationReader.getProperty("browser");
+
+            // we  say program  go  to Configuration property file I indicated key  as
+            //browser =>  in Configuration file we see browser = "chrome"
+            //  and then in  switch statement we find the matching case
             /*
             Depending on the browserType that will be return from configuration.properties
             file switch statement  will determine the
