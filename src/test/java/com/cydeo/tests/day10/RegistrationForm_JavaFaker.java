@@ -7,8 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class RegistrationForm {
-
+public class RegistrationForm_JavaFaker {
 
     @Test
     public void testRegistrationForm() {
@@ -30,15 +29,26 @@ public class RegistrationForm {
         inputLastName.sendKeys(faker.name().lastName());
 
         //5. Enter username
+        String user = faker.bothify("helpdesk###");
         WebElement inputUserName = Driver.getDriver().findElement(By.xpath("//input[@name = 'username']"));
-        inputUserName.sendKeys(faker.name().username());
+        inputUserName.sendKeys(user);
+
 
         //6. Enter email address
         WebElement inputEmail = Driver.getDriver().findElement(By.xpath("//input[@name = 'email']"));
-        inputEmail.sendKeys(faker.name().username());
+        //second solution = concatenate
+        inputEmail.sendKeys(user+ "@mail.com");
+
 
         //7. Enter password
+        WebElement inputPassword = Driver.getDriver().findElement(By.xpath("//input[@name = 'password']"));
+         inputPassword.sendKeys(faker.internet().emailAddress());
+
+
+
         //8. Enter phone number
+        WebElement inputPhoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name = 'password']"));
+        inputPassword.sendKeys(faker.internet().emailAddress());
 
 
     }
@@ -68,3 +78,8 @@ public class RegistrationForm {
 //1. Use new Driver utility class and method
 //2. User JavaFaker when possible
 //3. User ConfigurationReader when it makes sense
+
+
+
+
+
