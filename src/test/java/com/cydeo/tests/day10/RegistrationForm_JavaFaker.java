@@ -5,6 +5,8 @@ import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegistrationForm_JavaFaker {
@@ -42,13 +44,46 @@ public class RegistrationForm_JavaFaker {
 
         //7. Enter password
         WebElement inputPassword = Driver.getDriver().findElement(By.xpath("//input[@name = 'password']"));
-         inputPassword.sendKeys(faker.internet().emailAddress());
+        inputPassword.sendKeys(faker.internet().password());
 
 
 
         //8. Enter phone number
-        WebElement inputPhoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name = 'password']"));
-        inputPassword.sendKeys(faker.internet().emailAddress());
+        WebElement inputPhoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name = 'phone']"));
+        inputPhoneNumber.sendKeys(faker.numerify("###-###-####"));
+
+        //9. Select a gender from radio buttons
+        WebElement gender = Driver.getDriver().findElement(By.xpath("//input[@value = 'female']"));
+        gender.click();
+
+        //10. Enter date of birth
+        WebElement inputDateOfBirth = Driver.getDriver().findElement(By.xpath("//input[@name = 'birthday']"));
+        inputDateOfBirth.sendKeys("10/22/1983");
+
+        //11. Select Department/Office
+        Select department = new Select(Driver.getDriver().findElement(By.xpath("//select[@name = 'department']")));
+        department.selectByVisibleText("Department of Engineering");
+
+        // 12. Select Job Title
+        Select jobTitle = new Select(Driver.getDriver().findElement(By.xpath("//select[@name = 'job_title']")));
+        jobTitle.selectByVisibleText("Manager");
+
+
+        //13. Select programming language from checkboxes
+        WebElement languageButton = Driver.getDriver().findElement(By.cssSelector("#inlineCheckbox2"));
+        languageButton.click();
+
+        //14. Click to sign up button
+        WebElement sighIn = Driver.getDriver().findElement(By.id("wooden_spoon"));
+        sighIn.click();
+
+        //15. Verify success message “You’ve successfully completed registration.” is
+        //displayed.
+        WebElement message = Driver.getDriver().findElement(By.tagName("p"));
+        String expectedMessage = "You've successfully completed registration!";
+        String actualMessage = message.getText();
+
+        Assert.assertEquals(expectedMessage, actualMessage, "Passed");
 
 
     }
