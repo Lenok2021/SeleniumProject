@@ -1,6 +1,8 @@
 package com.cydeo.tests.day10_Action_Class;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 public class JavaScriptExecuter {
@@ -10,6 +12,26 @@ public class JavaScriptExecuter {
 
         Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
 
+        // we cannot create  from Interface we cast it
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        // our  driver  cannot get  this  method   js.executeScript
+        // from Selenium library
+        // this method is in   JavascriptExecutor
+        //  we  down Cast and driver can get methods from    JavascriptExecutor interface
+
+        //750 pixels down 10 times.
+        for (int i = 0; i < 10; i++) {
+            BrowserUtils.sleepMethod(1);
+            js.executeScript("window.scrollBy(0,750)");
+
+        }
+        //750 pixels up 10 times
+        for (int i = 0; i < 10; i++) {
+            BrowserUtils.sleepMethod(1);
+            js.executeScript("window.scrollBy(0,-750)");
+
+        }
 
 
 

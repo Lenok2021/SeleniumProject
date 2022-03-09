@@ -19,6 +19,7 @@ public class Actions {
 
         org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(Driver.getDriver());
 
+
         //1. Hover over to first image
         WebElement img1 = Driver.getDriver().findElement(By.xpath("(//img)[1]"));
         BrowserUtils.sleepMethod(2);
