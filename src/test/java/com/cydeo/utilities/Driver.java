@@ -20,6 +20,8 @@ public class Driver {
     /*
     create a reusable utility  method which will
    return same driver instance when we will call that
+
+   the  value == null  by default
    */
     public static WebDriver getDriver() {
 
@@ -68,6 +70,22 @@ public class Driver {
         }
         return driver;  //  if the Driver is not null ==> return me the existing one
         // if  driver already exist return me existing driver.
+    }
+
+
+    /*
+    if my session Id  is not null (completely terminates)
+    I want to set  the value == null
+    This method will make sure our Driver values always == null
+    after quite method
+     */
+    public static void closeDriver(){
+        if(driver != null){
+            driver.quit(); // this lines will terminate the exiting session.value will not even be null
+            driver = null;
+        }
+
+
     }
 
 }
