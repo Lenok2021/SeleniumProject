@@ -3,12 +3,14 @@ package com.cydeo.tests.day6_Alerts_iFrame_HandleWindow;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class dropDowns_California_Month_Two_Tests {
@@ -58,6 +60,12 @@ public class dropDowns_California_Month_Two_Tests {
         Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
         Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
+        List<WebElement> list = yearDropdown.getOptions();
+        System.out.println(list.size());
+        List<WebElement> list4 = monthDropdown.getOptions();
+        System.out.println("list4.size() = " + list4.size());
+
+
         //Select year using : visible text
         yearDropdown.selectByVisibleText("1923");
 
@@ -99,8 +107,8 @@ Select day using : index number
 
 
     @AfterMethod
-    public void close() {
-        driver.close();
+   public void close() {
+      //  driver.close();
     }
 
 }
