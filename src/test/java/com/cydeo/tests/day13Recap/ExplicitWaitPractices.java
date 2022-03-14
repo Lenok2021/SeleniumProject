@@ -1,10 +1,9 @@
 package com.cydeo.tests.day13Recap;
 
 import com.cydeo.pages.DynamicControlPages;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,44 +11,41 @@ import org.testng.annotations.Test;
 public class ExplicitWaitPractices {
     DynamicControlPages dynamicControlPages;
 
-
-    @BeforeMethod
+        @BeforeMethod
     public void setupMethod(){
 
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_controls");
-
+            dynamicControlPages =new DynamicControlPages();
 
     }
 
-
     @Test
-    public void remove_button_test() {
+    public void remove_button_test(){
+        //3- Click to “Remove” button
+       dynamicControlPages.button.click();
 
-        // 3- Click to “Remove” button
-        dynamicControlPages = new DynamicControlPages();
+        //4- Wait until “loading bar disappears”
+//        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+//        wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
 
-        dynamicControlPages.button.click();
+        BrowserUtils.waitForInvisibilityOf(dynamicControlPages.loadingBar);
 
-        // 4- Wait until “loading bar disappears”
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        //5- Verify:
+        //a. Checkbox is not displayed
 
-        wait.until(ExpectedConditions.invisibilityOf(dynamicControlPages.loadingBar));
-
-        // 5- Verify:
-        // a. Checkbox is not displayed
 
         try {
-            Assert.assertTrue(!(dynamicControlPages.checkbox.isDisplayed()));
+            //assertFalse method will pass the test if the boolean value returned is: false
+            Assert.assertTrue(!dynamicControlPages.checkbox.isDisplayed());
             Assert.assertFalse(dynamicControlPages.checkbox.isDisplayed());
         }catch (NoSuchElementException n){
             Assert.assertTrue(true);
-
         }
-        // b. “It’s gone!” message is displayed.
 
-        Boolean isDisplayed = dynamicControlPages.message.isDisplayed();
-        System.out.println("isDisplayed = " + isDisplayed);
-
+        //b. “It’s gone!” message is displayed.
+        Assert.assertTrue(dynamicControlPages.message.isDisplayed());
+        Assert.assertTrue(dynamicControlPages.message.getText().equals("It's gone!"));
     }
 
 }

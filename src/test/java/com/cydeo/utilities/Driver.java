@@ -54,19 +54,19 @@ public class Driver {
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "firefox":
-                    WebDriverManager.chromedriver().setup();
+                    WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "opera":
-                    WebDriverManager.chromedriver().setup();
+                    WebDriverManager.operadriver().setup();
                     driver = new OperaDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "safari":
-                    WebDriverManager.chromedriver().setup();
+                    WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
