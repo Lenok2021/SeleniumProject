@@ -11,18 +11,18 @@ import org.testng.annotations.Test;
 public class ExplicitWaitPractices {
     DynamicControlPages dynamicControlPages;
 
-        @BeforeMethod
-    public void setupMethod(){
+    @BeforeMethod
+    public void setupMethod() {
 
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_controls");
-            dynamicControlPages =new DynamicControlPages();
+        dynamicControlPages = new DynamicControlPages();
 
     }
 
     @Test
-    public void remove_button_test(){
+    public void remove_button_test() {
         //3- Click to “Remove” button
-       dynamicControlPages.button.click();
+        dynamicControlPages.button.click();
 
         //4- Wait until “loading bar disappears”
 //        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
@@ -39,19 +39,15 @@ public class ExplicitWaitPractices {
             //assertFalse method will pass the test if the boolean value returned is: false
             Assert.assertTrue(!dynamicControlPages.checkbox.isDisplayed());
             Assert.assertFalse(dynamicControlPages.checkbox.isDisplayed());
-        }catch (NoSuchElementException n){
+        } catch (NoSuchElementException n) {
             Assert.assertTrue(true);
         }
 
         //b. “It’s gone!” message is displayed.
         Assert.assertTrue(dynamicControlPages.message.isDisplayed());
         Assert.assertTrue(dynamicControlPages.message.getText().equals("It's gone!"));
-    }
+       /*
 
-}
-
-
-/*
 TC #2: Explicit wait practice
 1- Open a chrome browser
 2- Go to: https://practice.cydeo.com/dynamic_controls
@@ -62,4 +58,45 @@ a. Checkbox is not displayed
 b. “It’s gone!” message is displayed.
 
 NOTE: FOLLOW POM
- */
+      */
+
+    }
+
+    @Test
+    public void testing_is_enabled() {
+        //3- Click to “Enable” button
+
+        //System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+        //        + dynamicControlsPage.inputBox.isEnabled());
+
+        dynamicControlPages.enableButton.click();
+
+        System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+                + dynamicControlPages.inputBox.isEnabled());
+
+
+        //4- Wait until “loading bar disappears”
+        //Calling our ExplicitWait utility method to wait loadingBar to disappear
+        BrowserUtils.waitForInvisibilityOf(dynamicControlPages.loadingBar);
+
+        System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
+                + dynamicControlPages.inputBox.isEnabled());
+
+        //5- Verify:
+        //a. Input box is enabled.
+
+        Assert.assertTrue(dynamicControlPages.inputBox.isEnabled());
+        //b. “It's enabled!” message is displayed.
+
+        Assert.assertTrue(dynamicControlPages.message.isDisplayed());
+
+        String expectedMessage = "It's enabled!";
+        String actualMessage = dynamicControlPages.message.getText();
+
+        Assert.assertEquals(expectedMessage, actualMessage);
+
+    }
+}
+
+
+
