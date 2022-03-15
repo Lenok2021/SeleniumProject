@@ -29,7 +29,7 @@ public class HoverOver {
 
         Assert.assertTrue(user1.isDisplayed());
 
-
+Driver.closeDriver();
 
 
 

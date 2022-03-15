@@ -52,7 +52,7 @@ public class RightClick_DoubleClick_Actions_Class {
        Assert.assertTrue(resultElm.isDisplayed() );
         Thread.sleep(2000);
 
-
+  Driver.closeDriver();
 
 
 
