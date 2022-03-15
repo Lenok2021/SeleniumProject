@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class day46Actions_Demo_KeyboardAction {
+public class day46_Actions_Demo_KeyboardAction {
 
     @Test
     public void test_keyBoard_Actions() {
