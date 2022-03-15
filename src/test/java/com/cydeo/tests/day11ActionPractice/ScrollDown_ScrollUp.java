@@ -31,8 +31,7 @@ public class ScrollDown_ScrollUp {
 
        // Driver.getDriver().quit();
 
-        // 1. when  I  use quite  method,  it  terminates Driver,  killed the session
-        // Session ID is null. Using WebDriver after calling quit()?
+        // 1. when  I  use quite  method,  it  terminates Driver,  killed the session ID is null. Using WebDriver after calling quit()?
 
         //2. when you use close()
         //org.openqa.selenium.NoSuchSessionException: invalid session id
@@ -44,6 +43,7 @@ public class ScrollDown_ScrollUp {
     public void test2() {
 
         Driver.getDriver().get("https://practice.cydeo.com/ ");
+
 
 
 

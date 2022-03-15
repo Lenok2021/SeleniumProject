@@ -44,6 +44,7 @@ public class Actions {
         WebElement img3 = Driver.getDriver().findElement(By.xpath("(//img)[3]"));
         BrowserUtils.sleepMethod(2);
         actions.moveToElement(img3).perform();
+
         WebElement user3 = Driver.getDriver().findElement(By.xpath("//h5 [text() = 'name: user3']"));
         Assert.assertTrue(user3.isDisplayed());
         WebElement profile3 = Driver.getDriver().findElement((By.xpath("(//a)[4]")));
